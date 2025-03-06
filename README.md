@@ -1,16 +1,15 @@
-# HR Dashboard
+# Hotel Check-In to Checkout Automation UI
 
 ## Overview
-The HR Dashboard is a modern, responsive web application designed to streamline HR processes, including managing available positions, tracking employees, scheduling, and monitoring job openings. The dashboard provides key metrics such as total employees, department-wise distribution, and recent activities.
+Implement a fully responsive web application that automates the process from hotel booking to web check-in and finally to checkout. The solution should be built using React and Tailwind CSS, and it must provide a seamless and intuitive experience for users booking a hotel for their family vacation.
 
 ![alt text](https://github.com/spranjal3301/xipper/blob/main/preview.png?raw=true)
 
 ## Features
-- **Dashboard Overview**: Displays total employees, available positions, urgent hiring needs, and talent requests.
-- **Employee Management**: View department-wise employee statistics, including gender distribution.
-- **Scheduling**: Tracks upcoming schedules and announcements.
-- **Job Openings**: Displays new job openings and hiring trends.
-- **Recent Activities**: Logs recent HR activities and new employee additions.
+- **Book a Hotel**: Select their desired hotel based on available options.
+- **Web Check-In**: Once booked, perform a web check-in by entering and validating phone numbers for each family member.
+- **Checkout**: Experience a streamlined checkout process at the end of their stay.
+- **Responsive Design**: The application should be fully responsive and work on all devices.
 - **Landing Page**: An additional marketing page created for assignment purposes.
 
 ## Tech Stack
@@ -21,7 +20,8 @@ The HR Dashboard is a modern, responsive web application designed to streamline 
 
 ## Project Structure
 ```
-└── spranjal3301-wehr/
+Directory structure:
+└── spranjal3301-xipper/
     ├── README.md
     ├── components.json
     ├── eslint.config.mjs
@@ -30,33 +30,56 @@ The HR Dashboard is a modern, responsive web application designed to streamline 
     ├── pnpm-lock.yaml
     ├── postcss.config.mjs
     ├── tsconfig.json
+    ├── prisma/
+    │   └── schema.prisma
     ├── public/
     └── src/
+        ├── middleware.ts
         ├── app/
         │   ├── globals.css
         │   ├── layout.tsx
-        │   ├── (marketing)/
-        │   │   ├── layout.tsx
+        │   ├── (auth)/
+        │   │   ├── sign-in/
+        │   │   │   └── [[...sign-in]]/
+        │   │   │       └── page.tsx
+        │   │   └── sign-up/
+        │   │       └── [[...sign-up]]/
+        │   │           └── page.tsx
+        │   ├── (protected)/
         │   │   ├── _components/
-        │   │   │   └── header.tsx
+        │   │   │   ├── footer.tsx
+        │   │   │   ├── header.tsx
+        │   │   │   └── hero.tsx
         │   │   └── dashboard/
         │   │       └── page.tsx
         │   └── (website)/
         │       └── page.tsx
         ├── components/
+        │   ├── Header.tsx
+        │   ├── Hero.tsx
+        │   ├── booking-context.tsx
+        │   ├── checkout.tsx
+        │   ├── hotel-booking.tsx
+        │   ├── profile.tsx
+        │   ├── theme-provider.tsx
+        │   ├── theme-toggle.tsx
+        │   ├── web-check-in.tsx
+        │   └── ui/
         ├── hooks/
-        ├── icons/
+        │   └── use-mobile.ts
         └── lib/
+            └── utils.ts
+
 ```
 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/spranjal3301/WeHR
+   git clone https://github.com/spranjal3301/xipper
    ```
 2. Navigate to the project directory:
    ```sh
-   cd spranjal3301-wehr
+   cd spranjal3301-xipper
    ```
 3. Install dependencies:
    ```sh
